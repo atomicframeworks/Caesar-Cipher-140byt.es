@@ -4,12 +4,20 @@
 <div>Actual encrypted value: <b id="encrypted"></b></div>
 <div>Expected decrypted value: <b>abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</b></div>
 <div>Decrypted value: <b id="decrypted"></b></div>
+<div>Expected test high and low multiple value: <b>true</b></div>
+<div>Test high and low multiple value: <b id="multiple"></b></div>
 
 
 <script>
 
   var caesar = function(a,b){return a.replace(/./g,function(a){return String.fromCharCode(a.charCodeAt()^b)})}
 
-  document.getElementById( "encrypted" ).innerHTML = caesar('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ',23);
-  document.getElementById( "decrypted" ).innerHTML = caesar('xyzabcdefghijklmnopqrstuvwXYZABCDEFGHIJKLMNOPQRSTUVW',-23);
+  document.getElementById( "encrypted" ).innerHTML = caesar('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ', 23);
+  document.getElementById( "decrypted" ).innerHTML = caesar('xyzabcdefghijklmnopqrstuvwXYZABCDEFGHIJKLMNOPQRSTUVW', -23);
+  
+  // Rotating by any positive or negative multiple of 26 should equal the original text.
+  document.getElementById( "multiple" ).innerHTML = ( 
+    'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ' === caesar('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ', -26 * 12345) &&
+    'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ' === caesar('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ', 26 * 54321)
+  );
 </script>
