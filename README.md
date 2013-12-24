@@ -1,26 +1,17 @@
-140byt.es
+Caesar Cipher
 =========
 
-A tweet-sized, fork-to-play, community-curated collection of JavaScript.
+A Caesar cipher in 133 bytes.
 
-How to play
------------
+"In cryptography, a Caesar cipher, also known as Caesar's cipher, the shift cipher, Caesar's code or Caesar shift, is one of the simplest and most widely known encryption techniques. It is a type of substitution cipher in which each letter in the plaintext is replaced by a letter some fixed number of positions down the alphabet. For example, with a left shift of 3, D would be replaced by A, E would become B, and so on. The method is named after Julius Caesar, who used it in his private correspondence."
 
-1. Click the ![Fork](https://d3nwyuy0nl342s.cloudfront.net/images/gist/buttons/fork_button.png) button above to fork this gist.
-2. Modify all the files to according to the rules below.
-3. Save your entry and tweet it up!
+[Wikipedia](http://en.wikipedia.org/wiki/Caesar_cipher)
 
-Keep in mind that thanks to the awesome sensibilities of the GitHub team, gists are just repos. So feel free to clone yours and work locally for a more comfortable environment, and to allow commit messages.
-
-Rules
------
-All entries must exist in an `index.js` file, whose contents are
-
-1. an assignable, valid Javascript expression that
-2. contains no more than 140 bytes, and
-3. does not leak to the global scope.
-
-All entries must also be licensed under the [WTFPL](http://sam.zoy.org/wtfpl/) or equally permissive license.
+Source
+------
+```javascript
+var caesar = function(a,b,c){return a.replace(/[A-z]/g,function(a){c=(a=a.charCodeAt())>96?97:65;return String.fromCharCode((a+b%26+26-c)%26+c)})}
+```
 
 For more information
 --------------------

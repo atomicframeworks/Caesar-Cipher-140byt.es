@@ -1,13 +1,13 @@
 {
-  "name": "theNameOfYourLibWhichMustBeAValidCamelCasedJavaScriptIdentifier",
+  "name": "caesarCipher",
 
-  "description": "This should be a short description of your entry.",
+  "description": "A Caesar cipher aka shift cipher",
 
   "keywords": [
-    "five",
-    "descriptive",
-    "keywords",
-    "or",
-    "fewer"
+    "caesar",
+    "cipher",
+    "string",
+    "encrypt",
+    "decrypt"
   ]
 }

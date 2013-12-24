@@ -1,12 +1,15 @@
 <!DOCTYPE html> 
-<title>Foo</title>
-<div>Expected value: <b>undefined</b></div>
-<div>Actual value: <b id="ret"></b></div>
+<title>Caesar Cipher</title>
+<div>Expected encrypted value: <b>xyzabcdefghijklmnopqrstuvwXYZABCDEFGHIJKLMNOPQRSTUVW</b></div>
+<div>Actual encrypted value: <b id="encrypted"></b></div>
+<div>Expected decrypted value: <b>abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</b></div>
+<div>Decrypted value: <b id="decrypted"></b></div>
+
+
 <script>
-  // write a small example that shows off the API for your example
-  // and tests it in one fell swoop.
 
-  var myFunction = function(){ /* the code here should be identical to the entry. */ }
+  var caesar = function(a,b){return a.replace(/./g,function(a){return String.fromCharCode(a.charCodeAt()^b)})}
 
-  document.getElementById( "ret" ).innerHTML = myFunction()
+  document.getElementById( "encrypted" ).innerHTML = caesar('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ',23);
+  document.getElementById( "decrypted" ).innerHTML = caesar('xyzabcdefghijklmnopqrstuvwXYZABCDEFGHIJKLMNOPQRSTUVW',-23);
 </script>
